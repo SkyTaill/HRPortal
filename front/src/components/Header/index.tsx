@@ -11,7 +11,7 @@ interface EventFiltersInfo {
 
 const Header: React.FC = () => {
 
-    const [infoUser, setInfoUser] = useState<EventFiltersInfo>();
+    //const [infoUser, setInfoUser] = useState<EventFiltersInfo>();
     //needUpdate -false и isLoading -false значит мы уже собрали статистику и всю инфу отображаем в хеадер
     const [needUpdate, setNeedUpdate] = useState(true);
     const [isLoading, setIsLoading] = useState(false);

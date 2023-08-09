@@ -3,9 +3,9 @@ import css from "./index.module.css"
 
 function Footer() {
     return (
-        <div>
-            3
-        </div>
+        <footer className={css.footer}>
+
+        </footer>
     );
 }
 
