@@ -13,7 +13,9 @@ const Home: React.FC = () => {
 
     return (
         <div>
+            <section className={css.promo_sectionBlock}>
 
+            </section>
         </div>
     )
 }
