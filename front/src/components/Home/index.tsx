@@ -13,7 +13,15 @@ const Home: React.FC = () => {
 
     return (
         <div>
-            <section className={css.promo_sectionBlock}>
+            <div className={css.section_block}>
+                <section className={css.promo}>
+                    <h1 className={css.promo_h1}>
+                        Оценивайте кандидатов быстро, легко и уверенно.
+                    </h1>
+                </section>
+            </div>
+
+            <section className={css.promoWithMan_section_block}>
 
             </section>
         </div>
