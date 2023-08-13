@@ -166,7 +166,13 @@
 .buttonLogIn {
     width: 379px;
     height: 59px;
-
+    color: rgba(255, 255, 255, 0.3);
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.44px;
     border: none;
     outline: none;
     background: #b8bcd3;
@@ -255,7 +261,13 @@
 
     width: 379px;
     height: 59px;
-
+    color: #FFF;
+    font-family: Inter;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.44px;
     border: none;
     outline: none;
     background: #3b52e6;

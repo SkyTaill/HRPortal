@@ -16,6 +16,8 @@ const Home: React.FC = () => {
             <div className={css.section_block}>
                 <section className={css.promo}>
                     <div>
+                        <p className={css.promo_elips}></p>
+
                         <h1 className={css.promo_h1}>
                             Оценивайте кандидатов быстро, легко и уверенно.
                         </h1>

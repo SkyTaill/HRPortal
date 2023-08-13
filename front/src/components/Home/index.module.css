@@ -78,3 +78,14 @@
     margin-left: 300px;
     background-image: url("../../pic/header/man2.svg");
 }
+
+.promo_elips {
+    position: absolute;
+    width: 859px;
+    height: 606px;
+    flex-shrink: 0;
+    border-radius: 859px;
+    opacity: 0.3;
+    background: radial-gradient(50% 50.00% at 50% 50.00%, #5652F2 0%, rgba(86, 82, 242, 0.00) 100%);
+    z-index: -1;
+}
