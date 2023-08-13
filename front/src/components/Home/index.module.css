@@ -3,9 +3,6 @@
     height: 657px;
     position: relative;
     background: #2B2B3F;
-
-
-
 }
 
 .promo {
@@ -15,20 +12,69 @@
     display: flex;
 }
 
+@import url(https://myfonts.ru/myfonts?fonts=ferry);
+
+@font-face {
+    font-family: 'Alfa Slab One';
+    src: url("/front/src/ttf/AlfaSlabOne-Regular.ttf") format("ttf");
+}
 
 .promo_h1 {
     margin-top: 142px;
     margin-left: 83px;
     color: #FFF;
-    font-family: Alfa Slab One;
-    font-size: 32px;
+    font-family: 'Alfa Slab One', arial;
     font-style: normal;
-    font-weight: 400;
+    font-size: 52px;
     line-height: normal;
+    width: 528px;
+}
 
+.promo_p {
+    color: #FFF;
+    font-family: 'Alfa Slab One';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    width: 513px;
+    letter-spacing: 1px;
+    height: 190px;
+    margin-left: 83px;
+}
+
+.promo_pic {
+    width: 485px;
+    height: 559px;
+    margin-left: 300px;
+    background-image: url("../../pic/header/man.svg");
+}
+
+.promo_white {
+    height: 657px;
+}
+
+.promo_white_flex {
+    display: flex;
+}
+
+.promo_white_h1 {
+    margin-top: 142px;
+    margin-left: 83px;
+    color: #FFF;
+    font-family: 'Alfa Slab One', arial;
+    font-style: normal;
+    font-size: 52px;
+    line-height: normal;
+    width: 528px;
+    color: #2B2B3F;
+    backdrop-filter: blur(2px);
 
 }
 
-.promoWithMan_section_block {
-    height: 657px;
+.promo_white_pic {
+    width: 485px;
+    height: 500px;
+    margin-left: 300px;
+    background-image: url("../../pic/header/man2.svg");
 }
