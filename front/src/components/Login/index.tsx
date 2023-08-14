@@ -11,6 +11,7 @@ const Login: React.FC = () => {
     const [passwordBoolen, setPasswordBoolen] = useState(false)
     const [login, setLogin] = useState("")
     const [password, setPassword] = useState("")
+    const [blockMenuLogin, setBlockMenuLogin] = useState(true)
     // const navigate = useNavigate();
     // const dispatch = useAppDispatch();
 
@@ -65,18 +66,18 @@ const Login: React.FC = () => {
                 <div className={css.loginMenu}>
                     <div className={css.flex_block}>
                         <div>
-                            <h4 className={css.logInText}>
+                            <button className={blockMenuLogin ? css.logInText : css.NoLogInText}>
                                 Войти
-                            </h4>
-                            <div className={css.loginLine}>
-
+                            </button>
+                            <div className={blockMenuLogin ? css.loginLine : css.NoLoginLine}>
                             </div>
+
                         </div>
                         <div className={css.loginMenu}>
-                            <h4 className={css.registrMenuText}>
+                            <button className={blockMenuLogin ? css.NoRegistrMenuText : css.registrMenuText}>
                                 Зарегистрироваться
-                            </h4>
-                            <div className={css.registrLine}>
+                            </button>
+                            <div className={blockMenuLogin ? css.NoRegistrLine : css.registrLine}>
 
                             </div>
                         </div>
@@ -91,20 +92,37 @@ const Login: React.FC = () => {
                     <p className={css.textLoginBox} style={{ marginTop: "40px" }}>Пароль:</p>
                     <input type="password" className={passwordBoolen ? css.input : css.inputErr} onChange={onChangePassword} />
 
-                    {passwordBoolen ? null : (<p className={css.textErr}>Неправильный пароль</p>)}
+                    {passwordBoolen ? null : (<p className={css.textErr}>Введите корректные данные</p>)}
 
 
                     {loginBoolen ? (passwordBoolen ? <button className={css.buttonLogInValidTrue} onClick={onClick} style={{ marginTop: "40px" }}>Войти</button>
                         : <button className={css.buttonLogIn} style={{ marginTop: "40px" }}>Войти</button>) : <button className={css.buttonLogIn} style={{ marginTop: "40px" }} >Войти</button>
                     }
-
-
-
-
                 </div>
             </div>
         </section>
     )
+
+
+    function Login() {
+
+
+        if (login) {
+
+            return (
+                <div>
+
+                </div>
+            )
+        } else {
+            return (
+                <div>
+
+                </div>
+            )
+        }
+    }
+
 }
 
 

@@ -74,6 +74,8 @@
 
 .logInText {
 
+    margin-top: 20px;
+    margin-bottom: 25px;
     width: 49px;
     height: 19px;
     display: block;
@@ -87,7 +89,34 @@
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.02em;
+    background-color: #2D2D44;
+    border: none;
+    outline: none;
+    color: #E69100;
 
+}
+
+.NoLogInText {
+
+    margin-top: 20px;
+    margin-bottom: 25px;
+    width: 49px;
+    height: 19px;
+    display: block;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    background-color: #2D2D44;
+    border: none;
+    outline: none;
+    opacity: 0.3;
     color: #E69100;
 
 }
@@ -108,9 +137,64 @@
     background: #E69100;
 }
 
+.NoLoginLine {
+
+    width: 151px;
+    height: 2px;
+    left: 895px;
+    top: 214px;
+    opacity: 0.3;
+    background: #E69100;
+}
 
 
 .registrMenuText {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    width: 170px;
+    height: 19px;
+    display: block;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #2D2D44;
+    border: none;
+    outline: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+
+    color: #E69100;
+}
+
+.NoRegistrMenuText {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    width: 170px;
+    height: 19px;
+    display: block;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #2D2D44;
+    border: none;
+    outline: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    opacity: 0.3;
+    color: #E69100;
+}
+
+.NoRegistrMenuText {
     width: 170px;
     height: 19px;
     display: block;
@@ -130,6 +214,23 @@
 }
 
 .registrLine {
+    width: 213px;
+    height: 2px;
+    left: 1061px;
+    top: 214px;
+    background: rgba(230, 145, 0);
+}
+
+.NoRegistrLine {
+    width: 213px;
+    height: 2px;
+    left: 1061px;
+    top: 214px;
+    opacity: 0.3;
+    background: rgba(230, 145, 0);
+}
+
+.NoRegistrLine {
     width: 213px;
     height: 2px;
     left: 1061px;
