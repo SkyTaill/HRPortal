@@ -57,19 +57,86 @@ const Login: React.FC = () => {
         </section>
     )
 
+}
 
-    function Registry() {
+const Registry: React.FC = () => {
+    const [loginBoolen, setLoginBoolen] = useState(false)
+    const [passwordBoolen, setPasswordBoolen] = useState(false)
+    const [passwordQRBoolen, setPasswordQRBoolen] = useState(false)
+    const [login, setLogin] = useState("")
+    const [password, setPassword] = useState("")
 
-
-
-        return (
-            <div>
-
-            </div>
-        )
+    const onChangeLogin = (e: React.FormEvent<HTMLInputElement>) => {
+        var a: boolean
+        if (e.currentTarget.value !== "") {
+            var patt = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+            a = patt.test(e.currentTarget.value)
+            setLoginBoolen(a)
+            if (a) {
+                setLogin(e.currentTarget.value)
+            }
+        } else if (e.currentTarget.value === "") {
+            setLoginBoolen(false)
+        } else {
+            setLoginBoolen(true)
+            setLogin(e.currentTarget.value)
+        }
 
     }
+
+    const onChangeQRPass = (e: React.FormEvent<HTMLInputElement>) => {
+        var a: boolean
+        if (e.currentTarget.value !== "") {
+
+            setPasswordQRBoolen(true)
+        }
+        else {
+            setPasswordQRBoolen(false)
+        }
+
+    }
+
+    const onChangePass = (e: React.FormEvent<HTMLInputElement>) => {
+        var a: boolean
+        if (e.currentTarget.value !== "") {
+
+            setPasswordBoolen(true)
+        }
+        else {
+            setPasswordBoolen(false)
+        }
+
+    }
+
+    const onClick = () => {
+        console.log("dsada")
+        // if (loginBoolen !== false && passwordBoolen !== false) {
+        //     // postGetToken()
+        // }
+    }
+
+    return (
+        <div>
+            <p className={css.textLoginBox} style={{ marginTop: "20px" }}>Почта:</p>
+
+            <input type="text" className={loginBoolen ? css.input : css.inputErr} onChange={onChangeLogin} />
+
+            <p className={css.textLoginBox} style={{ marginTop: "20px" }}>Индивидуальный код:</p>
+
+            <input type="text" className={passwordQRBoolen ? css.input : css.inputErr} onChange={onChangeQRPass} />
+
+            <p className={css.textLoginBox} style={{ marginTop: "20px" }}>Пароль:</p>
+
+            <input type="text" className={passwordBoolen ? css.input : css.inputErr} onChange={onChangePass} />
+
+            {loginBoolen ? (passwordBoolen ? <button className={css.buttonLogInValidTrue} onClick={onClick} style={{ marginTop: "20px" }}>Войти</button>
+                : <button className={css.buttonLogIn} style={{ marginTop: "20px" }}>Войти</button>) : <button className={css.buttonLogIn} style={{ marginTop: "20px" }} >Зарегестрироваться</button>
+            }
+        </div>
+    )
+
 }
+
 const LoginBlock: React.FC = () => {
     const [loginBoolen, setLoginBoolen] = useState(false)
     const [passwordBoolen, setPasswordBoolen] = useState(false)
@@ -79,15 +146,8 @@ const LoginBlock: React.FC = () => {
 
     const onChangeLogin = (e: React.FormEvent<HTMLInputElement>) => {
         var a: boolean
-        if (e.currentTarget.value.startsWith("+")) {
-            var patt = new RegExp(
-                '^' +                           // No leading content.
-                '[-+]?' +                       // Optional sign.
-                '(?:[0-9]{0,30}\\.)?' +         // Optionally 0-30 decimal digits of mantissa.
-                '[0-9]{1,30}' +                 // 1-30 decimal digits of integer or fraction.
-                '(?:[Ee][-+]?[1-2]?[0-9])?' +   // Optional exponent 0-29 for scientific notation.
-                '$'                             // No trailing content.
-            )
+        if (e.currentTarget.value !== "") {
+            var patt = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
             a = patt.test(e.currentTarget.value)
             setLoginBoolen(a)
             if (a) {
@@ -117,12 +177,10 @@ const LoginBlock: React.FC = () => {
         //     // postGetToken()
         // }
     }
-
-
     return (
         <div>
             <div className={css.loginMargin}>
-                <p className={css.textLoginBox} style={{ marginTop: "40px" }}>Логин или номер телефона:</p>
+                <p className={css.textLoginBox} style={{ marginTop: "40px" }}>Почта:</p>
 
                 <input type="text" className={loginBoolen ? css.input : css.inputErr} onChange={onChangeLogin} />
 
