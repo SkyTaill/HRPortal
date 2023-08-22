@@ -5,7 +5,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/db
+    url: jdbc:postgresql://localhost:5432/hrdb
     username: postgres
     password: root1
   jpa:
@@ -13,6 +13,7 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create
+
   servlet:
     multipart:
       max-request-size: 50MB
@@ -22,6 +23,6 @@ spring:
     change-log: classpath:liquibase/db.changelog-master.xml
       
 
-    url: jdbc:postgresql://localhost:5432/db
+    url: jdbc:postgresql://localhost:5432/hrdb
     user: postgres
     password: root1

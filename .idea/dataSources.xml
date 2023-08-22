@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db@localhost" uuid="3015d74c-869a-4f43-aff1-98e097bf65cc">
+    <data-source source="LOCAL" name="hrdb@localhost" uuid="3015d74c-869a-4f43-aff1-98e097bf65cc">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/db</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/hrdb</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
