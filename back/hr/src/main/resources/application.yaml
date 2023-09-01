@@ -16,6 +16,12 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
+  liquibase:
+    change-log: classpath:liquibase/db.changelog-master.xml
 
+
+    url: jdbc:postgresql://localhost:5432/hrdb
+    user: postgres
+    password: root1
   main:
     allow-circular-references: true
