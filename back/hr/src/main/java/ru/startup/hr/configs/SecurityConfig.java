@@ -14,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import ru.startup.hr.service.UserService;
+import ru.startup.hr.service.security.UserService;
 
 
 @EnableWebSecurity
@@ -44,6 +44,7 @@ public class SecurityConfig {
                 .antMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().permitAll()
                 .and()
+                //сессии через куки отключаем так как у нс рест
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .exceptionHandling()

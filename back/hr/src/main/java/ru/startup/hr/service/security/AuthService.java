@@ -1,4 +1,4 @@
-package ru.startup.hr.service;
+package ru.startup.hr.service.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -9,11 +9,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
-import ru.startup.hr.dtos.JwtRequest;
-import ru.startup.hr.dtos.JwtResponse;
-import ru.startup.hr.dtos.RegistrationUserDto;
-import ru.startup.hr.dtos.UserDto;
-import ru.startup.hr.entities.User;
+import ru.startup.hr.dto.JwtRequest;
+import ru.startup.hr.dto.JwtResponse;
+import ru.startup.hr.dto.RegistrationUserDto;
+import ru.startup.hr.dto.UserDto;
+import ru.startup.hr.entities.users.User;
 import ru.startup.hr.exceptions.AppError;
 import ru.startup.hr.utils.JwtTokenUtils;
 
@@ -31,6 +31,7 @@ public class AuthService {
         } catch (BadCredentialsException e) {
             return new ResponseEntity<>(new AppError(HttpStatus.UNAUTHORIZED.value(), "Неправильный логин или пароль"), HttpStatus.UNAUTHORIZED);
         }
+
         UserDetails userDetails = userService.loadUserByUsername(authRequest.getUsername());
         String token = jwtTokenUtils.generateToken(userDetails);
         return ResponseEntity.ok(new JwtResponse(token));

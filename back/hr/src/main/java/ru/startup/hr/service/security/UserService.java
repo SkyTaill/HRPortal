@@ -1,4 +1,4 @@
-package ru.startup.hr.service;
+package ru.startup.hr.service.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -8,8 +8,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.startup.hr.dtos.RegistrationUserDto;
-import ru.startup.hr.entities.User;
+import ru.startup.hr.dto.RegistrationUserDto;
+import ru.startup.hr.entities.users.Status;
+import ru.startup.hr.entities.users.User;
 import ru.startup.hr.repositories.UserRepository;
 
 
@@ -18,6 +19,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+        //что б через данный сервис секюр искал пользователей
 public class UserService implements UserDetailsService {
     private UserRepository userRepository;
     private RoleService roleService;
@@ -57,10 +59,12 @@ public class UserService implements UserDetailsService {
 
     public User createNewUser(RegistrationUserDto registrationUserDto) {
         User user = new User();
+
         user.setUsername(registrationUserDto.getUsername());
         user.setEmail(registrationUserDto.getEmail());
         user.setPassword(passwordEncoder.encode(registrationUserDto.getPassword()));
         user.setRoles(List.of(roleService.getUserRole()));
+        user.setStatus(Status.ACTIVE);
         return userRepository.save(user);
     }
 }

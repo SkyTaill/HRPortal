@@ -47,6 +47,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                     null,
                     jwtTokenUtils.getRoles(jwt).stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList())
             );
+
             SecurityContextHolder.getContext().setAuthentication(token);
         }
         filterChain.doFilter(request, response);

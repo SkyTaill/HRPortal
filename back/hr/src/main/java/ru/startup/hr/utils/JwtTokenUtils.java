@@ -16,6 +16,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Component
+        //создаем токен
 public class JwtTokenUtils {
     @Value("${jwt.secret}")
     private String secret;
@@ -23,6 +24,8 @@ public class JwtTokenUtils {
     @Value("${jwt.lifetime}")
     private Duration jwtLifetime;
 
+
+    //создаем токен и возвращаем его пользователю
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
         List<String> rolesList = userDetails.getAuthorities().stream()
@@ -37,6 +40,7 @@ public class JwtTokenUtils {
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(issuedDate)
                 .setExpiration(expiredDate)
+                //добавляем подпись
                 .signWith(SignatureAlgorithm.HS256, secret)
                 .compact();
     }

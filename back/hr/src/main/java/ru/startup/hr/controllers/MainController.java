@@ -25,6 +25,7 @@ public class MainController {
     }
 
     @GetMapping("/info")
+    //Principal - текущий пользователь
     public String userData(Principal principal) {
         return principal.getName();
     }

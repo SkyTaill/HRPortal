@@ -1,4 +1,4 @@
-package ru.startup.hr.dtos;
+package ru.startup.hr.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

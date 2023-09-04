@@ -1,4 +1,4 @@
-package ru.startup.hr.entities;
+package ru.startup.hr.entities.users;
 
 import lombok.Data;
 import javax.persistence.*;
@@ -22,6 +22,10 @@ public class User {
 
     @Column(name = "email")
     private String email;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private Status status;
 
     @ManyToMany
     @JoinTable(
