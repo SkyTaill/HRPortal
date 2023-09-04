@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+import ru.startup.hr.entities.users.Status;
 
 import java.time.Duration;
 import java.util.Date;
@@ -33,6 +34,14 @@ public class JwtTokenUtils {
                 .collect(Collectors.toList());
         claims.put("roles", rolesList);
 
+        if(userDetails.isAccountNonLocked()){
+            claims.put(Status.ACTIVE.getName(), Status.ACTIVE);
+        }else {
+            claims.put(Status.ACTIVE.getName(), Status.NOT_ACTIVE);
+
+        }
+
+
         Date issuedDate = new Date();
         Date expiredDate = new Date(issuedDate.getTime() + jwtLifetime.toMillis());
         return Jwts.builder()
@@ -51,6 +60,10 @@ public class JwtTokenUtils {
 
     public List<String> getRoles(String token) {
         return getAllClaimsFromToken(token).get("roles", List.class);
+    }
+
+    public String getStatus(String token) {
+        return getAllClaimsFromToken(token).get(Status.ACTIVE.getName(), String.class);
     }
 
     private Claims getAllClaimsFromToken(String token) {

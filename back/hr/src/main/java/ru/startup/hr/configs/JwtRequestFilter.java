@@ -10,6 +10,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import ru.startup.hr.entities.users.Status;
+import ru.startup.hr.exceptions.JwtAuthenticationException;
 import ru.startup.hr.utils.JwtTokenUtils;
 
 
@@ -41,14 +43,21 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 log.debug("Подпись неправильная");
             }
         }
-        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
-                    username,
-                    null,
-                    jwtTokenUtils.getRoles(jwt).stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList())
-            );
 
-            SecurityContextHolder.getContext().setAuthentication(token);
+
+        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null  ) {
+            System.out.println("--"+ jwtTokenUtils.getStatus(jwt)+"    --"+Status.ACTIVE.name());
+
+            if(jwtTokenUtils.getStatus(jwt).equals(Status.ACTIVE.name())) {
+
+                UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
+                        username,
+
+                        jwtTokenUtils.getRoles(jwt).stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList())
+                );
+
+                SecurityContextHolder.getContext().setAuthentication(token);
+            }
         }
         filterChain.doFilter(request, response);
     }
