@@ -50,9 +50,18 @@ public class UserService implements UserDetailsService {
         User user = findByUsername(username).orElseThrow(() -> new UsernameNotFoundException(
                 String.format("Пользователь '%s' не найден", username)
         ));
+        boolean accountNotLocked=false;
+        if(user.getStatus()==Status.ACTIVE)
+        {
+            accountNotLocked=true;
+        }
         return new org.springframework.security.core.userdetails.User(
                 user.getUsername(),
                 user.getPassword(),
+                true,
+                true,
+                true,
+                accountNotLocked,
                 user.getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList())
         );
     }

@@ -84,15 +84,23 @@
 
     <insert tableName="users">
         <column name="username" value="maxim"/>
-        <column name="email" value="admin@gmail.com"/>
+        <column name="email" value="user@gmail.com"/>
         <column name="password" value="$2a$04$Fx/SX9.BAvtPlMyIIqqFx.hLY2Xp8nnhpzvEEVINvVpwIPbA3v/.i"/>
-
     </insert>
 
     <insert tableName="users_roles">
         <column name="user_id" value="1"/>
         <column name="role_id" value="1"/>
+    </insert>
+    <insert tableName="users">
+        <column name="username" value="maxim2"/>
+        <column name="email" value="admin@gmail.com"/>
+        <column name="password" value="$2a$04$Fx/SX9.BAvtPlMyIIqqFx.hLY2Xp8nnhpzvEEVINvVpwIPbA3v/.i"/>
+    </insert>
 
+    <insert tableName="users_roles">
+        <column name="user_id" value="2"/>
+        <column name="role_id" value="2"/>
     </insert>
 </changeSet>
 </databaseChangeLog>

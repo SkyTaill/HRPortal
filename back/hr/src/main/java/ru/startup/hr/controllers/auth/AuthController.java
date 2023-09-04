@@ -1,4 +1,4 @@
-package ru.startup.hr.controllers;
+package ru.startup.hr.controllers.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
