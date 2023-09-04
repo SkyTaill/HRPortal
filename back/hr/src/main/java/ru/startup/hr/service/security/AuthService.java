@@ -13,7 +13,7 @@ import ru.startup.hr.dto.JwtRequest;
 import ru.startup.hr.dto.JwtResponse;
 import ru.startup.hr.dto.RegistrationUserDto;
 import ru.startup.hr.dto.UserDto;
-import ru.startup.hr.entities.users.User;
+import ru.startup.hr.entities.user.User;
 import ru.startup.hr.exceptions.AppError;
 import ru.startup.hr.utils.JwtTokenUtils;
 

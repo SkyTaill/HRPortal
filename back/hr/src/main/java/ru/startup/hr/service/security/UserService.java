@@ -9,8 +9,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.startup.hr.dto.RegistrationUserDto;
-import ru.startup.hr.entities.users.Status;
-import ru.startup.hr.entities.users.User;
+import ru.startup.hr.entities.user.Status;
+import ru.startup.hr.entities.user.User;
 import ru.startup.hr.repositories.UserRepository;
 
 

@@ -2,7 +2,7 @@ package ru.startup.hr.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ru.startup.hr.entities.users.Role;
+import ru.startup.hr.entities.user.Role;
 
 
 import java.util.Optional;

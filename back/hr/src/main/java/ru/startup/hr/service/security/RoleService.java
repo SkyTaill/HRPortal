@@ -2,7 +2,7 @@ package ru.startup.hr.service.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.startup.hr.entities.users.Role;
+import ru.startup.hr.entities.user.Role;
 import ru.startup.hr.repositories.RoleRepository;
 
 

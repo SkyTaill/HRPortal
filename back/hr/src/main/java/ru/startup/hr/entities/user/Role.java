@@ -1,4 +1,4 @@
-package ru.startup.hr.entities.users;
+package ru.startup.hr.entities.user;
 
 
 import lombok.Data;

@@ -40,7 +40,6 @@ public class SecurityConfig {
                 .cors().disable()
                 .authorizeRequests()
                 .antMatchers("/api/**").authenticated()
-               // .antMatchers("/info").authenticated()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().permitAll()
                 .and()
