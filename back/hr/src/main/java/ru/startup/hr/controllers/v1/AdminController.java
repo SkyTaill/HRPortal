@@ -1,4 +1,4 @@
-package ru.startup.hr.controllers;
+package ru.startup.hr.controllers.v1;
 
 
 import lombok.RequiredArgsConstructor;

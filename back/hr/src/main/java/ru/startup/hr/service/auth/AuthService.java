@@ -1,4 +1,4 @@
-package ru.startup.hr.service.security;
+package ru.startup.hr.service.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -9,13 +9,13 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
-import ru.startup.hr.dto.JwtRequest;
-import ru.startup.hr.dto.JwtResponse;
-import ru.startup.hr.dto.RegistrationUserDto;
-import ru.startup.hr.dto.UserDto;
+import ru.startup.hr.dto.auth.JwtRequest;
+import ru.startup.hr.dto.auth.JwtResponse;
+import ru.startup.hr.dto.auth.RegistrationUserDto;
+import ru.startup.hr.dto.auth.UserDto;
 import ru.startup.hr.entities.user.User;
 import ru.startup.hr.exceptions.AppError;
-import ru.startup.hr.utils.JwtTokenUtils;
+import ru.startup.hr.utils.auth.JwtTokenUtils;
 
 
 @Service

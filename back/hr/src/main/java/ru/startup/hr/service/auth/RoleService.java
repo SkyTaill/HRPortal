@@ -1,4 +1,4 @@
-package ru.startup.hr.service.security;
+package ru.startup.hr.service.auth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

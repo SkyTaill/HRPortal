@@ -1,4 +1,4 @@
-package ru.startup.hr.service.security;
+package ru.startup.hr.service.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.startup.hr.dto.RegistrationUserDto;
+import ru.startup.hr.dto.auth.RegistrationUserDto;
 import ru.startup.hr.entities.user.Status;
 import ru.startup.hr.entities.user.User;
 import ru.startup.hr.repositories.UserRepository;

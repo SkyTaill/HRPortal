@@ -5,9 +5,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.startup.hr.dto.JwtRequest;
-import ru.startup.hr.dto.RegistrationUserDto;
-import ru.startup.hr.service.security.AuthService;
+import ru.startup.hr.dto.auth.JwtRequest;
+import ru.startup.hr.dto.auth.RegistrationUserDto;
+import ru.startup.hr.service.auth.AuthService;
 
 
 @RestController

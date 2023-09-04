@@ -1,4 +1,4 @@
-package ru.startup.hr.dto;
+package ru.startup.hr.dto.auth;
 
 import lombok.Data;
 

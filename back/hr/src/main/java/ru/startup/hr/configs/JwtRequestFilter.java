@@ -10,7 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import ru.startup.hr.utils.JwtTokenUtils;
+import ru.startup.hr.utils.auth.JwtTokenUtils;
 
 
 import javax.servlet.FilterChain;
