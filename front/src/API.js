@@ -1,2 +1,2 @@
-const HOST = "https://gateway.scan-interfax.ru/api/v1"
+const HOST = "http://localhost:8189"
 export { HOST };

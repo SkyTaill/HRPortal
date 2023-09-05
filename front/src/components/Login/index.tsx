@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import css from "./index.module.css"
-
+import axios from 'axios';
 import { useState } from 'react';
+import { Token, User } from '../../DTO/login';
+import { HOST } from '../../API';
 
 
 const Login: React.FC = () => {
@@ -152,23 +154,9 @@ const LoginBlock: React.FC = () => {
     const [password, setPassword] = useState("")
 
 
-    // const onChangeLogin = (e: React.FormEvent<HTMLInputElement>) => {
-    //     var a: boolean
-    //     if (e.currentTarget.value !== "") {
-    //         var patt = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-    //         a = patt.test(e.currentTarget.value)
-    //         setLoginBoolen(a)
-    //         if (a) {
-    //             setLogin(e.currentTarget.value)
-    //         }
-    //     } else if (e.currentTarget.value === "") {
-    //         setLoginBoolen(false)
-    //     } else {
-    //         setLoginBoolen(true)
-    //         setLogin(e.currentTarget.value)
-    //     }
-
-    // }
+    const onChangeLogin = (e: React.FormEvent<HTMLInputElement>) => {
+        setLogin(e.currentTarget.value)
+    }
     const onChangePassword = (e: React.FormEvent<HTMLInputElement>) => {
 
         if (e.currentTarget.value === "") {
@@ -184,13 +172,18 @@ const LoginBlock: React.FC = () => {
         // if (loginBoolen !== false && passwordBoolen !== false) {
         //     // postGetToken()
         // }
+        let user: User = {
+            username: login,
+            password: password
+        }
+        getToken(user)
     }
     return (
         <div>
             <div className={css.loginMargin}>
                 <p className={css.textLoginBox} style={{ marginTop: "40px" }}>Почта:</p>
 
-                <input type="text" className={loginBoolen ? css.input : css.inputErr} />
+                <input type="text" className={loginBoolen ? css.input : css.inputErr} onChange={onChangeLogin} />
 
                 {loginBoolen ? null : (<p className={css.textErr}>Введите корректные данные</p>)}
 
@@ -204,8 +197,38 @@ const LoginBlock: React.FC = () => {
             }
         </div>
     )
-}
 
+    function getToken(user: User) {
+
+
+
+        axios.create({
+            baseURL: HOST,
+            timeout: 1000,
+
+            headers: { 'Access-Control-Allow-Origin:': '*' }
+        });
+
+        // const config = {
+        //     headers: { Authorization: `Bearer ${redux.token}` }
+        // };
+        console.log(user)
+        axios.post(HOST + '/hr/auth',
+
+            user
+        )
+            .then(response => {
+                var inputdate: Token = response.data.data
+                //  setJson(inputdate)
+                //  navigate("/search/scan")
+                console.log(inputdate)
+            })
+            .catch(function (error: any) {
+                console.log(error);
+            });
+    }
+
+}
 
 
 export default Login;
