@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jmolecules:jmolecules-events:1.8.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Public/gradle/caches/modules-2/files-2.1/org.jmolecules/jmolecules-events/1.8.0/33a91c54236c73ff9279cc125bcd31c76e20d7de/jmolecules-events-1.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../Public/gradle/caches/modules-2/files-2.1/org.jmolecules/jmolecules-events/1.8.0/1791a865bd4db2bf15f154b0609af0c4d1577d42/jmolecules-events-1.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

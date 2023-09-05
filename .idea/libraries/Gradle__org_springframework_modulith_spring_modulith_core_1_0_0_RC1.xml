@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.modulith:spring-modulith-core:1.0.0-RC1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Public/gradle/caches/modules-2/files-2.1/org.springframework.modulith/spring-modulith-core/1.0.0-RC1/34c4aaec74f7f6bb1976b4e222818196f38f1748/spring-modulith-core-1.0.0-RC1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../Public/gradle/caches/modules-2/files-2.1/org.springframework.modulith/spring-modulith-core/1.0.0-RC1/4d0f45e3f1ebfbad8219612875846a7817aa347f/spring-modulith-core-1.0.0-RC1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

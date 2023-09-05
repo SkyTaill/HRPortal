@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.modulith:spring-modulith-api:1.0.0-RC1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Public/gradle/caches/modules-2/files-2.1/org.springframework.modulith/spring-modulith-api/1.0.0-RC1/c78dfe999fb8e84af2cafa386532c2a9d0b01b1e/spring-modulith-api-1.0.0-RC1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../Public/gradle/caches/modules-2/files-2.1/org.springframework.modulith/spring-modulith-api/1.0.0-RC1/9d745d1cbf6dd2da918e0e821fd5063c3c42fc52/spring-modulith-api-1.0.0-RC1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

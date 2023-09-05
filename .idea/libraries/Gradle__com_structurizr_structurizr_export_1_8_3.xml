@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.structurizr:structurizr-export:1.8.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Public/gradle/caches/modules-2/files-2.1/com.structurizr/structurizr-export/1.8.3/4f9d86c9cab53541f536f53bde8daf153386d3d8/structurizr-export-1.8.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../Public/gradle/caches/modules-2/files-2.1/com.structurizr/structurizr-export/1.8.3/8260cb780f002a72b1b9976fb7412d0a49e99ba/structurizr-export-1.8.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

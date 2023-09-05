@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.structurizr:structurizr-plantuml:1.6.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Public/gradle/caches/modules-2/files-2.1/com.structurizr/structurizr-plantuml/1.6.3/211c9dda1717e0ed8c5d7698618b2fde17cdb78f/structurizr-plantuml-1.6.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../Public/gradle/caches/modules-2/files-2.1/com.structurizr/structurizr-plantuml/1.6.3/91db0253bac21e81a1e75730b511232e012a2082/structurizr-plantuml-1.6.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
