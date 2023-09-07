@@ -14,8 +14,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import ru.startup.hr.service.auth.UserService;
 
+
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
@@ -35,9 +41,10 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
+        http=             http.cors().and().csrf().disable();
+
         http
-                .csrf().disable()
-                .cors().disable()
                 .authorizeRequests()
                 .antMatchers("/api/**").authenticated()
                 .antMatchers("/admin/**").hasRole("ADMIN")
@@ -69,4 +76,12 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
+
+    @Bean
+    public CorsFilter corsFilter() {   UrlBasedCorsConfigurationSource source =
+            new UrlBasedCorsConfigurationSource();   CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);   //    config.addAllowedOrigin("http://localhost:3000");
+        config.addAllowedOriginPattern("*");   config.addAllowedHeader("*");
+        config.addAllowedMethod("*");   source.registerCorsConfiguration("/**", config);
+        return new CorsFilter(source);}
 }
